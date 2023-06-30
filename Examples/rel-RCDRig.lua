@@ -19,6 +19,10 @@
     You are encouraged to change the accessories used, aslong as you know how to,
     the accessories CFraming is found at the end of the script.
 
+    btw, theres alot of "jitter" or "shaking" most likely due to the way i use
+    cframe, so while it wont look shaky 2u, other people will see it shaking.
+    you can most likely fix this by modifying my code. that's y it's open source
+
     don't be a skid (unless your learning) <3
 ]]--
 
