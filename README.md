@@ -12,14 +12,15 @@ originally by @Ficelloo
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dex4tw/RejectCharacterDeletions/main/RCDBypass.lua"))()
 ```
-- ** YOU MUST WRITE YOUR OWN CODE AFTER LOADING THE STRING. **
+- **YOU MUST WRITE YOUR OWN CODE AFTER LOADING THE STRING.**
 
 # Features
 - Allows movement of accessories
 - Does not "fail" ( means it the parts wont fall )
   ^ this was all i can think of
 
-- ** YOU MUST WRITE YOUR OWN CODE AFTER LOADING THE STRING. **
+
+- **YOU MUST WRITE YOUR OWN CODE AFTER LOADING THE STRING.**
 
 # RCD Bypass Example
 This is a Remote Control Dummy Script I created using UGC Catalog Accessories:
