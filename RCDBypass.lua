@@ -2,13 +2,16 @@
     RCD Bypass Rewrite
     original by @ficello
     rewritten by @dex4tw
-    (on github)
+    (on github) - hi 6/30/23
+
+    I encourage you to edit the code
+    to see if theres a faster, or better
+    way to work-around RCD
 ]]--
 
 -------------------------------------------------[ Variables & Functions ]-------------------------------------------------
 local plr = game:GetService("Players").LocalPlayer
 local character = plr.Character
-local uis = game:GetService("UserInputService")
 
 -------------------------------------------------[ Patch Welds ]-------------------------------------------------
 plr.Character = nil
