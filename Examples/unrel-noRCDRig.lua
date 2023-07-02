@@ -8,6 +8,7 @@
 -------------------------------------------------[ Variables & Functions ]-------------------------------------------------
 plr = game:GetService("Players").LocalPlayer
 character = plr.Character
+uis = game:GetService("UserInputService")
 
 torso = character['LongStraightHair']
 head = character['SidePonytail']
@@ -15,11 +16,14 @@ leftarm = character["MessyHair"]
 rightarm = character["Pal Hair"]
 leftleg = character["Pink Hair"]
 rightleg = character["LavanderHair"]
+tool = character['BrownCharmerHair']
 
 -------------------------------------------------[ Patch Accessories ]-------------------------------------------------
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dex4tw/RejectCharacterDeletions/main/AcessoryNetless.lua"))()
 for i,v in pairs(character:GetChildren()) do
     if v:IsA("Accessory") then
         v.Handle:BreakJoints()
+        v.Handle.CanCollide = true
         -- Add Attachments & Stuff --
         local AlignPosition = Instance.new("AlignPosition", v.Handle)
         local AlignOrientation = Instance.new("AlignOrientation", v.Handle)
@@ -42,14 +46,15 @@ for i,v in pairs(character:GetChildren()) do
             character['HumanoidRootPart'].Velocity = Vector3.new(0, 35, 0)
         end)
 
-        if v.Handle:FindFirstChild('SpecialMesh') then 
-            v.Handle.SpecialMesh:Destroy()
-        elseif v.Handle:FindFirstChild("Mesh") then
-            v.Handle.Mesh:Destroy()
+        if v == head or v == torso or v == leftarm or v == rightarm or v == leftleg or v== rightleg then
+            if v.Handle:FindFirstChild('SpecialMesh') then 
+                v.Handle.SpecialMesh:Destroy()
+            elseif v.Handle:FindFirstChild("Mesh") then
+                v.Handle.Mesh:Destroy()
+            end
         end
     end
 end
-
 
 -------------------------------------------------[ Patch Character ]-------------------------------------------------
 local OldPos = character["HumanoidRootPart"]
@@ -83,12 +88,42 @@ for i,v in pairs(character:GetChildren()) do
 	end
 end
 
+for i,v in pairs(character:GetChildren()) do
+    if v:IsA("Accessory") then
+        if v == head or v == torso or v == leftarm or v == rightarm or v == leftleg or v== rightleg or v==tool then
+            -- void
+        else
+            v:Destroy()
+        end
+    end
+end
+
+-------------------------------------------------[ Dummy Inventory ]-------------------------------------------------
+equip = false
+
+uis.InputBegan:Connect(function(key, typing)
+    if key.KeyCode == Enum.KeyCode.One and not typing then
+        if equip == false then
+            equip = true
+        else
+            equip = false
+        end    
+    end
+end)
+
 -------------------------------------------------[ Dummy Control ]-------------------------------------------------
 game:GetService("RunService").Heartbeat:Connect(function()
-    head.Handle.CFrame = character['Head'].CFrame
-    torso.Handle.CFrame = character["Torso"].CFrame * CFrame.Angles(0,17.28,0)
-    leftarm.Handle.CFrame = character["Left Arm"].CFrame * CFrame.Angles(17.28,0,0)
-    rightarm.Handle.CFrame = character["Right Arm"].CFrame * CFrame.Angles(17.28,0,0)
-    leftleg.Handle.CFrame = character["Left Leg"].CFrame * CFrame.Angles(17.28,0,0)
-    rightleg.Handle.CFrame = character["Right Leg"].CFrame * CFrame.Angles(17.28,0,0)
+    pcall(loadstring("head.Handle.CFrame = character['Head'].CFrame"))
+    pcall(loadstring('torso.Handle.CFrame = character["Torso"].CFrame * CFrame.Angles(0,17.28,0)'))
+    pcall(loadstring('leftarm.Handle.CFrame = character["Left Arm"].CFrame * CFrame.Angles(17.28,0,0)'))
+    pcall(loadstring('leftleg.Handle.CFrame = character["Left Leg"].CFrame * CFrame.Angles(17.28,0,0)'))
+    pcall(loadstring('rightleg.Handle.CFrame = character["Right Leg"].CFrame * CFrame.Angles(17.28,0,0)'))
+
+    if equip == false then
+        pcall(loadstring('rightarm.Handle.CFrame = character["Right Arm"].CFrame * CFrame.Angles(17.28,0,0)'))
+        pcall(loadstring("tool.Handle.CFrame = character['Torso'].CFrame:ToWorldSpace(CFrame.new(0,-5,0))"))
+    else
+        pcall(loadstring('rightarm.Handle.CFrame = character["Torso"].CFrame:ToWorldSpace(CFrame.new(1.4,.5,-.5))'))
+        pcall(loadstring("tool.Handle.CFrame = character['Torso'].CFrame:ToWorldSpace(CFrame.new(1.4,.5,-2))"))
+    end
 end)
