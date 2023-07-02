@@ -6,7 +6,7 @@ character, thus allowing them to "control" them.
 This isn't technically a bypass, but a **work-around**.
 - **( PS: YOU CANNOT MOVE LIMBS. ONLY ACCESSORIES. )**
 
-Eitherway, enjoy the work-around
+Eitherway, enjoy the [work-around](https://raw.githubusercontent.com/dex4tw/RejectCharacterDeletions/main/RCDBypass.lua)
 originally by @Ficelloo
 
 ```lua
@@ -14,17 +14,22 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/dex4tw/RejectCharacte
 ```
 - **YOU MUST WRITE YOUR OWN CODE AFTER LOADING THE STRING.**
 
-# Features
-- Allows movement of accessories
-- Does not "fail" ( means it the parts wont fall )
-  ^ this was all i can think of
+# Netless
 
-
+Additionally, if you are in a game that does not have `workspace.RejectCharacterDeletions` set to `true`, you can run [this](https://raw.githubusercontent.com/dex4tw/RejectCharacterDeletions/main/AcessoryNetless.lua).
+```lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dex4tw/RejectCharacterDeletions/main/AcessoryNetless.lua"))()
+```
+This allows you to move your hats around while preventing them from falling. ( You may edit the Velocity in the source-code )
 - **YOU MUST WRITE YOUR OWN CODE AFTER LOADING THE STRING.**
 
-# RCD Bypass Example
-This is a Remote Control Dummy Script I created using UGC Catalog Accessories:
+# Script Examples
+**[RCD BYPASS]** Remote Control Dummy:
   
 ![rcdexample](https://github.com/dex4tw/RejectCharacterDeletions/assets/121840104/30c4d988-542c-4e4d-9312-083a86a81fb5)
 
-It is composed of accessories, as you can only move accessories, not limbs.
+**[NO RCD NETLESS]** Remote Control Dummy:
+![NVIDIA_Share_8wcjxZqHt2](https://github.com/dex4tw/RejectCharacterDeletions/assets/121840104/912dd2fc-a4a0-4025-a3bf-44db24dba86d)
+
+
+These both can be found in the [Examples Page](https://github.com/dex4tw/RejectCharacterDeletions/tree/main/Examples)
