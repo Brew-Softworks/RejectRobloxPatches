@@ -33,7 +33,7 @@ This allows you to move your hats around while preventing them from falling. ( Y
   
 ![rcdexample](https://github.com/dex4tw/RejectCharacterDeletions/assets/121840104/30c4d988-542c-4e4d-9312-083a86a81fb5)
 
-**[NO RCD NETLESS]** [Remote Control Dummy](https://raw.githubusercontent.com/dex4tw/RejectCharacterDeletions/main/Examples/unrel-noRCDRig.lua):
+**[NO RCD NETLESS]** [Dex Dummy](https://raw.githubusercontent.com/dex4tw/RejectCharacterDeletions/main/Examples/unrel-noRCDRig.lua):
 ![NVIDIA_Share_8wcjxZqHt2](https://github.com/dex4tw/RejectCharacterDeletions/assets/121840104/912dd2fc-a4a0-4025-a3bf-44db24dba86d)
 
 
