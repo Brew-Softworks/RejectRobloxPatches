@@ -86,9 +86,9 @@ end
 -------------------------------------------------[ Dummy Control ]-------------------------------------------------
 game:GetService("RunService").Heartbeat:Connect(function()
     head.Handle.CFrame = character['Head'].CFrame
-    torso.Handle.CFrame = character["Torso"].CFrame
-    leftarm.Handle.CFrame = character["Left Arm"].CFrame
-    rightarm.Handle.CFrame = character["Right Arm"].CFrame
-    leftleg.Handle.CFrame = character["Left Leg"].CFrame
-    rightleg.Handle.CFrame = character["Right Leg"].CFrame
+    torso.Handle.CFrame = character["Torso"].CFrame * CFrame.Angles(0,17.28,0)
+    leftarm.Handle.CFrame = character["Left Arm"].CFrame * CFrame.Angles(17.28,0,0)
+    rightarm.Handle.CFrame = character["Right Arm"].CFrame * CFrame.Angles(17.28,0,0)
+    leftleg.Handle.CFrame = character["Left Leg"].CFrame * CFrame.Angles(17.28,0,0)
+    rightleg.Handle.CFrame = character["Right Leg"].CFrame * CFrame.Angles(17.28,0,0)
 end)
