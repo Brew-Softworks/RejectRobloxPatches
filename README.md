@@ -1,3 +1,8 @@
+# RejectRobloxPatches
+A repository with multiple ROBLOX related scripts that are about bypassing recent patches (ex: RejectCharacterDeletions)
+
+or just scripts in general.
+
 # RejectCharacterDeletions
 Is a work-around to ROBLOX's most RejectCharacterDeletions update
 RejectCharacteDeletions prevents player's from deleting objects in the
