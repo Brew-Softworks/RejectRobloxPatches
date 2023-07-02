@@ -172,8 +172,12 @@ local angle = 0
 local distanceOffset = 0 -- Very self explanatory...
 
 function orbitItem(item, angle)
-    local offset = Vector3.new(math.cos(angle) * orbitRadius, math.sin(angle) * orbitDistance, math.sin(angle) * orbitRadius)
-    item.Handle.CFrame = character.Torso.CFrame:ToWorldSpace(CFrame.new(offset))
+    if orbit then
+        local offset = Vector3.new(math.cos(angle) * orbitRadius, math.sin(angle) * orbitDistance, math.sin(angle) * orbitRadius)
+        item.Handle.CFrame = character.Torso.CFrame:ToWorldSpace(CFrame.new(offset))
+    else
+        item.Handle.CFrame = character.Torso.CFrame:ToWorldSpace(CFrame.new(0,-15,0))
+    end
 end
 
 
