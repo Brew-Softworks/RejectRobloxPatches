@@ -21,9 +21,9 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/dex4tw/RejectCharacte
 
 # Netless
 
-Additionally, if you are in a game that does not have `workspace.RejectCharacterDeletions` set to `true`, you can run [this](https://raw.githubusercontent.com/dex4tw/RejectCharacterDeletions/main/AcessoryNetless.lua).
+Additionally, if you are in a game that does not have `workspace.RejectCharacterDeletions` set to `true`, you can run [this](https://raw.githubusercontent.com/dex4tw/RejectRobloxPatches/main/AccessoryNetless.lua).
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/dex4tw/RejectCharacterDeletions/main/AcessoryNetless.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dex4tw/RejectRobloxPatches/main/AccessoryNetless.lua"))()
 ```
 This allows you to move your hats around while preventing them from falling. ( You may edit the Velocity in the source-code )
 - **YOU MUST WRITE YOUR OWN CODE AFTER LOADING THE STRING.**
