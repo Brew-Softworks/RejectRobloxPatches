@@ -1,10 +1,10 @@
 --[[
     Accessory to Tool [ About ]
         Convert your accessory to a tool
-	*       THIS WILL ONLY WORK ON GAMES WITH REJECTCHARACTERDELETIONS OFF (i think)
+	*       only use on game withs rejectcharacterdeletions off
         PS: Too much netless MAY lag you.
     
-    Dex Dummy [ Controls ]
+    Accessory to Tool [ Controls ]
         use your tools...
 
     @dex4tw - Discord & Roblox
@@ -18,18 +18,6 @@ character = plr.Character
 uis = game:GetService("UserInputService")
 
 tools = {}
-
-for index, tool in pairs(tools) do
-    local newTool = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
-    local Handle = Instance.new("Part", newTool)
-    Handle.Name = "Handle"
-    local toolIndex = Instance.new("IntValue", newTool)
-    toolIndex.Value = index
-    toolIndex.Name = "toolIndex"
-    Handle.CanCollide = false
-    Handle.Transparency = 1
-    Handle.CFrame = CFrame.new(0,5,0)
-end
 
 -- General Functions --
 function cLerp(part, targetCFrame, duration)
@@ -57,9 +45,28 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/dex4tw/RejectCharacte
 index = 0
 for i,v in pairs(character:GetChildren()) do
     if v:IsA("Accessory") then
-        v.Handle:BreakJoints()
         index=index+1
         table.insert(tools, index, v)
+    end
+end
+
+for index, tool in pairs(tools) do
+    local newTool = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
+    newTool.Name = tool.Name
+    newTool.CanBeDropped = false
+    local Handle = Instance.new("Part", newTool)
+    Handle.Name = "Handle"
+    local toolIndex = Instance.new("IntValue", newTool)
+    toolIndex.Value = index
+    toolIndex.Name = "toolIndex"
+    Handle.CanCollide = false
+    Handle.Transparency = 1
+    Handle.CFrame = CFrame.new(0,5,0)
+end
+
+for i,v in pairs(character:GetChildren()) do
+    if v:IsA("Accessory") then
+        v.Handle:BreakJoints()
     end
 end
 
@@ -74,6 +81,6 @@ end)
 
 character.ChildRemoved:Connect(function(child)
     if child:IsA("Tool") and child:FindFirstChild("toolIndex") then
-        equip:Disconnect()
+        if equip then equip:Disconnect() end
     end
 end)
