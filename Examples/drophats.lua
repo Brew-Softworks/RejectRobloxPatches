@@ -1,6 +1,6 @@
 --[[
     Drop Hats [ About ]
-	drops yoru characters accessories
+	Drop your accessories
 ]]--
 
 -------------------------------------------------[ Variables & Functions ]-------------------------------------------------
@@ -8,6 +8,7 @@
 -- Default Variables --
 plr = game:GetService("Players").LocalPlayer
 character = plr.Character
+uis = game:GetService("UserInputService")
 
 hats = {}
 
@@ -41,7 +42,7 @@ for i,v in pairs(character:GetChildren()) do
         v.Handle:BreakJoints()
         local part = Instance.new("Part", workspace)
         part.Name = v.Name
-        part.Size = Vector3.new(5,5,5)
+        part.Size = v.Handle.Size
         part.Transparency = 1
         part.CanCollide = true
         part.Massless = true
@@ -58,7 +59,6 @@ plr.Character.Humanoid.Died:Connect(function()
         end
     end
 end)
-
 -------------------------------------------------[ CFrame Interpolation ]-------------------------------------------------
 game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
     for index, hat in pairs(hats) do
