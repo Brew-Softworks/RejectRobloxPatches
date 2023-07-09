@@ -1,6 +1,5 @@
 --[[
-    Drop Hats [ About ]
-	Drop your accessories
+    Untitled Scrispt [ About ]
 ]]--
 
 -------------------------------------------------[ Variables & Functions ]-------------------------------------------------
@@ -40,9 +39,9 @@ for i,v in pairs(character:GetChildren()) do
     if v:IsA("Accessory") then
         index=index+1
         v.Handle:BreakJoints()
-        local part = Instance.new("Part", workspace)
+        local part = v.Handle:Clone()
+        part:ClearAllChildren()
         part.Name = v.Name
-        part.Size = v.Handle.Size
         part.Transparency = 1
         part.CanCollide = true
         part.Massless = true
@@ -58,9 +57,11 @@ plr.Character.Humanoid.Died:Connect(function()
             v:Destroy()
         end
     end
+    dropHats:Disconnect()
 end)
+
 -------------------------------------------------[ CFrame Interpolation ]-------------------------------------------------
-game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
+dropHats = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
     for index, hat in pairs(hats) do
         cLerp(hat.Handle, workspace[hat.Name].CFrame, 0)()
     end
