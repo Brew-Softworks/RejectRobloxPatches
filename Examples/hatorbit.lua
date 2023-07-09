@@ -76,6 +76,10 @@ for i, tool in ipairs(character:GetChildren()) do
     end
 end
 
+plr.Character.humanoid.Died:Connect(function()
+    hatOrbit:Disconnect()
+end)
+
 game:GetService("TextChatService").MessageReceived:Connect(function(msg)
     local message = msg.Text
 	local author = msg.TextSource
@@ -87,10 +91,9 @@ game:GetService("TextChatService").MessageReceived:Connect(function(msg)
     end
 end)
 
-
 -------------------------------------------------[ CFrame Interpolation ]-------------------------------------------------
 orbitAngle = 2
-game:GetService("RunService").Stepped:Connect(function(deltaTime, Step)
+hatOrbit = game:GetService("RunService").Stepped:Connect(function(deltaTime, Step)
     angle = angle + (orbitSpeed * Step)
     distanceOffset = distanceOffset + (orbitSpeed * Step)
     local distance = math.sin(distanceOffset) * orbitDistance
