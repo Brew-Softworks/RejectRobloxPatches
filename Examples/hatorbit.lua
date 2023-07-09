@@ -76,7 +76,7 @@ for i, tool in ipairs(character:GetChildren()) do
     end
 end
 
-plr.Character.humanoid.Died:Connect(function()
+plr.Character.Humanoid.Died:Connect(function()
     hatOrbit:Disconnect()
 end)
 
