@@ -1,6 +1,5 @@
 --[[
-    Drag Hats [ About ]
-      Lets you drag your accessories
+    Untitled Scrispt [ About ]
 ]]--
 
 -------------------------------------------------[ Variables & Functions ]-------------------------------------------------
@@ -58,6 +57,7 @@ for i,v in pairs(character:GetChildren()) do
 end
 plr.Character.Humanoid.Died:Connect(function()
     if hatFolder then hatFolder:Destroy() end
+    toHandle:Disconnect()
 end)
 
 getPart = nil
@@ -84,7 +84,7 @@ plr:GetMouse().Button1Up:Connect(function()
 end)
 
 -------------------------------------------------[ CFrame Interpolation ]-------------------------------------------------
-game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
+toHandle = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
     for index, hat in pairs(hats) do
         cLerp(hat.Handle, hatFolder[hat.Name].CFrame, 0.2)()
     end
