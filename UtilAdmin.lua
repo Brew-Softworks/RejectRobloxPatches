@@ -17,7 +17,7 @@ to (str)[user] - can be shortened user or displayname (teleports to them)
 blockhats - make your hats blocks
 drophats (int)[handle size] - drop your hats
 hatorbit - make your hats orbit you press + or - to change modes
-draghats - drag your hats with your mouse
+draghats (int)[speed] - drag your hats with your mouse
 nohats - deletes your hats
 givehats (str)[user] - give you hats to a player
 rj - rejoin the game
