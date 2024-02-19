@@ -105,7 +105,7 @@ end
 
 
 -------------------------------------------------[ Patch Accessories ]-------------------------------------------------
-loadstring(game:HttpGet("https://raw.githubusercontent.com/dex4tw/RejectCharacterDeletions/main/AcessoryNetless.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Brew-Softworks/RejectRobloxPatches/main/AccessoryNetless.lua"))()
 for i,v in pairs(character:GetChildren()) do
     if v:IsA("Accessory") then
         v.Handle:BreakJoints()
